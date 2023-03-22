@@ -110,5 +110,23 @@ a{
 .navButton:hover{
     color: #782b2a;
 }
+.quizItem{
+    background-color: #ABBFB8;
+    border: #ABBFB8 2px solid;
+    border-radius: 30px;
+    width: 500px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+}
+.quizzes{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 
