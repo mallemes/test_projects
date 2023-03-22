@@ -8,7 +8,7 @@ type QuizDataType = {
 
 export const QuizDates: QuizDataType = [
     {
-        questionText: "atyn kim?",
+        questionText: "1atyn kim?",
         answers: [
             {answer: "erjan", isCorrect: true},
             {answer: "talgat", isCorrect: false},
@@ -16,7 +16,7 @@ export const QuizDates: QuizDataType = [
             {answer: "kulaw", isCorrect: false},
         ]
     }, {
-        questionText: "atyn kim?",
+        questionText: "2atyn kim?",
         answers: [
             {answer: "erjan", isCorrect: true},
             {answer: "talgat", isCorrect: false},
@@ -24,7 +24,7 @@ export const QuizDates: QuizDataType = [
             {answer: "kulaw", isCorrect: false},
         ]
     }, {
-        questionText: "atyn kim?",
+        questionText: "3atyn kim?",
         answers: [
             {answer: "erjan", isCorrect: true},
             {answer: "talgat", isCorrect: false},
@@ -32,9 +32,9 @@ export const QuizDates: QuizDataType = [
             {answer: "kulaw", isCorrect: false},
         ]
     }, {
-        questionText: "atyn kim?",
+        questionText: "4atyn kim?",
         answers: [
-            {answer: "erjan", isCorrect: true},
+            {answer: "3erjan", isCorrect: true},
             {answer: "talgat", isCorrect: false},
             {answer: "marat", isCorrect: false},
             {answer: "kulaw", isCorrect: false},

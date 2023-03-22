@@ -1,28 +1,15 @@
 import React from 'react';
-import styles from '../../style/quizStyle/Index.module.css';
+import Quiz from "./components/Quiz";
+import Navbar from "./components/Navbar";
+
 const QuizApp = () => {
+
     return (
         <div>
-            <div className={styles.root}>
-                <div className={styles.container}>
-                    <div className={styles.question}>QWd,dddkdkddd</div>
-                    <div className={styles.answerPR}>
-                        <div className={styles.answer}>
-                            w,l,s,sls
-                        </div>
-                        <div className={styles.answer}>
-                            w,l,s,sls
-                        </div>
-                        <div className={styles.answer}>
-                            w,l,s,sls
-                        </div>
-                        <div className={styles.answer}>
-                            w,l,s,sls
-                        </div>
-                    </div>
-                </div>
-            </div>
+           <Navbar/>
+            <Quiz/>
         </div>
+
 
     );
 };

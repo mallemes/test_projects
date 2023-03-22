@@ -1,11 +1,11 @@
 
 body{
     margin: 0;
-}
-.root{
     background-image: url("https://wallpaperaccess.com/full/2384075.jpg");
+}
+.quiz{
     width: 100%;
-    height: 600px;
+    margin-top: 80px;
     color: #FFFFFF;
     display: flex;
     justify-content: center;
@@ -16,7 +16,7 @@ body{
     border: #ABBFB8 2px solid;
     border-radius: 30px;
     width: 500px;
-    height: 420px;
+    height: 430px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,3 +54,61 @@ body{
     background: rgba(99, 135, 144, 1);
     box-shadow: 0 4px 4px rgb(10, 93, 116);
 }
+.end{
+    color: black;
+}
+.endTitle{
+    margin-top: 20px;
+    border-radius: 30px;
+    font-size: 34px;
+    padding: 30px 90px 30px 90px;
+    background: #B8E893;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.9);
+}
+.score{
+    font-size: 64px;
+    margin: 60px 140px 50px 180px;
+}
+.restart{
+    border-radius: 30px;
+    width: 60%;
+    font-size: 34px;
+    display: flex;
+    justify-content: center;
+    background: #B8E893;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.9);
+    padding: 20px 20px 20px 20px;
+    margin-left: 70px;
+}
+.navbar{
+    background-color: #AFADAB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+a{
+    text-decoration: none;
+}
+.logo{
+    margin-left: 30px;
+    width: 30%;
+    color: #21786d;
+    font-size: 30px;
+}
+.navButtons{
+    width: 70%;
+
+
+}
+.navButton{
+    color: black;
+    font-weight: bold;
+    margin-left: 40px;
+    text-transform: uppercase;
+}
+.navButton:hover{
+    color: #782b2a;
+}
+
+
