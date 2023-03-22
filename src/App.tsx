@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
+import QuizApp from "./projects/quizProject/QuizApp";
 
 function App() {
   return (
-    <div className="App">
-
+    <div>
+      <QuizApp/>
     </div>
   );
 }
