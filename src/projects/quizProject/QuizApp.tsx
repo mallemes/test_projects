@@ -4,19 +4,28 @@ import Navbar from "./components/Navbar";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import AddQuiz from "./components/AddQuiz";
 import Index from "./components/Index";
+import PageNotFount from "./components/PageNotFount";
+import Register from "./components/Register";
+import Profile from "./components/Profile";
+import {AuthProvider} from "./components/Context/AuthContext";
+import AuthRequire from "./components/HOC/AuthRequire";
 
 const QuizApp = () => {
 
     return (
         <BrowserRouter>
-            <div>
+            <AuthProvider>
                 <Navbar/>
                 <Routes>
                     <Route element={<Index/>} path={'/'}/>
+                    <Route element={<Register/>} path={'/register'}/>
+                    <Route element={<Profile/>} path={'/logout'}/>
                     <Route element={<Quiz/>} path={'/quiz/:quizId'}/>
-                    <Route element={<AddQuiz/>} path={'/add_quiz'}/>
+                    <Route element={<PageNotFount/>} path={'*'}/>
+                    <Route element={<AuthRequire><AddQuiz/></AuthRequire>} path={'/add_quiz'}/>
+                    <Route element={<AuthRequire><Profile/></AuthRequire>} path={'/profile'}/>
                 </Routes>
-            </div>
+            </AuthProvider>
         </BrowserRouter>
     );
 };
