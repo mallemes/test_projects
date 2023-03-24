@@ -34,8 +34,8 @@ const Quiz:React.FC  = () => {
                     ? <>
                         <div className={styles.question}>{quizDates[quizProcess.currentQuestion].questionText}</div>
                         <div className={styles.answerPR}>
-                            {quizDates[quizProcess.currentQuestion].answers.map(question =>
-                                <div onClick={() => nextQuiz(question.isCorrect)} key={question.answer}
+                            {quizDates[quizProcess.currentQuestion].answers.map((question,index) =>
+                                <div onClick={() => nextQuiz(question.isCorrect)} key={index}
                                      className={styles.answer}>
                                     {question.answer}
                                 </div>

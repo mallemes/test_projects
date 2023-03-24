@@ -10,7 +10,7 @@ const Index = () => {
         <div className={styles.quizzes}>
             {QuizDates.map((quiz ,index)=>(
                 <div key={index} onClick={()=>navigate(`/quiz/${index}`)} className={styles.quizItem}>
-                    QUIZ
+                    QUIZ {index+1}
                 </div>
             ))}
         </div>

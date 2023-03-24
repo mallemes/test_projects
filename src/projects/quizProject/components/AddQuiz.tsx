@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styles from "../style/index.module.css";
 import {QuizDates} from "../data";
+import {useNavigate} from "react-router-dom";
 
 type quizType = {
     questionText: string;
@@ -10,33 +11,35 @@ type questionType = {
     questionText: string;
     answers: Array<{ answer: string; isCorrect: boolean; }>;
 }
-const a12 = {questionText: "",
-    answers: [{answer: "", isCorrect: false}, {answer: "", isCorrect: false}, {
-        answer: "",
-        isCorrect: false
-    }, {answer: "", isCorrect: false}]
+const initialValue = {questionText: "",
+    answers: [{answer: "", isCorrect: false}, {answer: "", isCorrect: false},
+        {answer: "", isCorrect: false}, {answer: "", isCorrect: false}]
 }
 
 const AddQuiz = () => {
-
+    const navigate = useNavigate();
     const [isChecked, setIsChecked] = useState(1)
-    const [newQuizValues, setNewQuizValues] = useState<questionType>(a12)
+    const [newQuizValues, setNewQuizValues] = useState<questionType>(initialValue)
     const [newQuiz, setNewQuiz] = useState<quizType|null>(null)
-    const inputs = [1, 2, 3, 4]
+    const inputs = [1, 2, 3, 4];
     const changeArr = (e: React.ChangeEvent<HTMLInputElement>, i: number) => {
         const ch = {answer: e.target.value, isCorrect: isChecked - 1 === i}
-        const a2 = newQuizValues.answers.map((el, j) => (j === i) ? ch : el)
-        setNewQuizValues({...newQuizValues, answers: a2})
+        const newAnswers = newQuizValues.answers.map((el, j) => (j === i) ? ch : el)
+        setNewQuizValues({...newQuizValues, answers: newAnswers})
     }
     const refresh = () => {
+        newQuizValues.answers = newQuizValues.answers.map((el: { answer: string; isCorrect: boolean; }, index: number) => (index == isChecked - 1)
+            ? {isCorrect: true, answer: el.answer} : {isCorrect: false, answer: el.answer})
         if (!newQuiz) setNewQuiz([ newQuizValues])
         else setNewQuiz([...newQuiz, newQuizValues])
-        setNewQuizValues(a12)
-        console.log(newQuiz)
+
+        setNewQuizValues(initialValue)
     }
     const save = () => {
-        if (newQuiz)
-        QuizDates.push(newQuiz)
+        if (newQuiz) {
+            QuizDates.push(newQuiz)
+        return navigate('/')
+        }
     }
 
     return (
