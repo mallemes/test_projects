@@ -2,25 +2,14 @@ import React, {useState} from 'react';
 import styles from "../style/index.module.css";
 import {QuizDates} from "../data";
 import {useNavigate} from "react-router-dom";
+import {initialValue, questionType, quizType} from "./types/quizType";
 
-type quizType = {
-    questionText: string;
-    answers: Array<{ answer: string; isCorrect: boolean; }>;
-}[]
-type questionType = {
-    questionText: string;
-    answers: Array<{ answer: string; isCorrect: boolean; }>;
-}
-const initialValue = {questionText: "",
-    answers: [{answer: "", isCorrect: false}, {answer: "", isCorrect: false},
-        {answer: "", isCorrect: false}, {answer: "", isCorrect: false}]
-}
 
 const AddQuiz = () => {
     const navigate = useNavigate();
     const [isChecked, setIsChecked] = useState(1)
     const [newQuizValues, setNewQuizValues] = useState<questionType>(initialValue)
-    const [newQuiz, setNewQuiz] = useState<quizType|null>(null)
+    const [newQuiz, setNewQuiz] = useState<quizType | null>(null)
     const inputs = [1, 2, 3, 4];
     const changeArr = (e: React.ChangeEvent<HTMLInputElement>, i: number) => {
         const ch = {answer: e.target.value, isCorrect: isChecked - 1 === i}
@@ -28,20 +17,22 @@ const AddQuiz = () => {
         setNewQuizValues({...newQuizValues, answers: newAnswers})
     }
     const refresh = () => {
-        newQuizValues.answers = newQuizValues.answers.map((el: { answer: string; isCorrect: boolean; }, index: number) => (index == isChecked - 1)
-            ? {isCorrect: true, answer: el.answer} : {isCorrect: false, answer: el.answer})
-        if (!newQuiz) setNewQuiz([ newQuizValues])
+        newQuizValues.answers = newQuizValues.answers.map((el: { answer: string; isCorrect: boolean; }
+            , index: number) => (index == isChecked - 1)
+            ? {isCorrect: true, answer: el.answer} :
+            {isCorrect: false, answer: el.answer})
+        if (!newQuiz) setNewQuiz([newQuizValues])
         else setNewQuiz([...newQuiz, newQuizValues])
-
         setNewQuizValues(initialValue)
     }
+    const addQuizCheck = !(newQuizValues.answers[0].answer && newQuizValues.answers[1].answer
+        && newQuizValues.answers[2].answer && newQuizValues.answers[3].answer && newQuizValues.questionText)
     const save = () => {
         if (newQuiz) {
             QuizDates.push(newQuiz)
-        return navigate('/')
+            return navigate('/')
         }
     }
-
     return (
         <div className={styles.quiz} style={{paddingBottom: "50px"}}>
             <div className={styles.container} style={{height: "500px"}}>
@@ -67,9 +58,12 @@ const AddQuiz = () => {
                     ))}
                     <div>
                         <button className={styles.addQuizBtn}
-                              onClick={save}  style={{backgroundColor: "rgba(136, 134, 134, 0.52)"}}>save
+                                onClick={save} disabled={newQuiz ? !newQuiz[0]?.answers[3].answer : true}
+                                style={{backgroundColor: "rgba(136, 134, 134, 0.52)"}}>save
                         </button>
-                        <button onClick={refresh} className={styles.addQuizBtn}>+</button>
+                        <button disabled={addQuizCheck} onClick={refresh}
+                                className={styles.addQuizBtn}>+
+                        </button>
                     </div>
                 </div>
             </div>
@@ -77,5 +71,4 @@ const AddQuiz = () => {
 
     );
 };
-
 export default AddQuiz;

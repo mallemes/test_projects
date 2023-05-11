@@ -10,6 +10,7 @@ import Profile from "./components/Profile";
 import About from "./components/About";
 import {AuthProvider} from "./components/Context/AuthContext";
 import AuthRequire from "./components/HOC/AuthRequire";
+import Login from "./components/Login";
 
 const QuizApp = () => {
 
@@ -20,6 +21,7 @@ const QuizApp = () => {
                 <Routes>
                     <Route element={<Index/>} path={'/'}/>
                     <Route element={<Register/>} path={'/register'}/>
+                    <Route element={<Login/>} path={'/login'}/>
                     <Route element={<About/>} path={'/about'}/>
                     <Route element={<Quiz/>} path={'/quiz/:quizId'}/>
                     <Route element={<PageNotFount/>} path={'*'}/>

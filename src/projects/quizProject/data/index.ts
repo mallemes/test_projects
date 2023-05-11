@@ -8,71 +8,71 @@ type QuizDataType = {
 
 export const QuizDates: QuizDataType = [[
     {
-        questionText: "1-1atyn kim?",
+        questionText: "Kazakhstan astanasy ?",
         answers: [
-            {answer: "erjan", isCorrect: true},
-            {answer: "talgat", isCorrect: false},
-            {answer: "marat", isCorrect: false},
-            {answer: "kulaw", isCorrect: false},
+            {answer: "Astana", isCorrect: true},
+            {answer: "Aktau", isCorrect: false},
+            {answer: "Almaty", isCorrect: false},
+            {answer: "Semey", isCorrect: false},
         ]
     }, {
-        questionText: "1-2atyn kim?",
+        questionText: "President kim?",
         answers: [
-            {answer: "erjan", isCorrect: true},
-            {answer: "talgat", isCorrect: false},
-            {answer: "marat", isCorrect: false},
-            {answer: "kulaw", isCorrect: false},
+            {answer: "Toqaev", isCorrect: true},
+            {answer: "Nazarbaev", isCorrect: false},
+            {answer: "Putin", isCorrect: false},
+            {answer: "Obama", isCorrect: false},
         ]
     }, {
-        questionText: "1-3atyn kim?",
+        questionText: "Jer kolemi newinwi orynda",
         answers: [
-            {answer: "erjan", isCorrect: true},
-            {answer: "talgat", isCorrect: false},
-            {answer: "marat", isCorrect: false},
-            {answer: "kulaw", isCorrect: false},
+            {answer: "9", isCorrect: true},
+            {answer: "2", isCorrect: false},
+            {answer: "1", isCorrect: false},
+            {answer: "8", isCorrect: false},
         ]
     }, {
-        questionText: "1-4atyn kim?",
+        questionText: "Qazaq handygy kuryldy?",
         answers: [
-            {answer: "3erjan", isCorrect: true},
-            {answer: "talgat", isCorrect: false},
-            {answer: "marat", isCorrect: false},
-            {answer: "kulaw", isCorrect: false},
+            {answer: "1465", isCorrect: true},
+            {answer: "1234", isCorrect: false},
+            {answer: "5432", isCorrect: false},
+            {answer: "1994", isCorrect: false},
         ]
     }
 ]
     ,[
         {
-            questionText: "2-1atyn kim?",
+            questionText: "Abylay han shyn aty?",
             answers: [
-                {answer: "erjan", isCorrect: true},
+                {answer: "Abilmansur", isCorrect: true},
                 {answer: "talgat", isCorrect: false},
                 {answer: "marat", isCorrect: false},
-                {answer: "kulaw", isCorrect: false},
+                {answer: "erlan", isCorrect: false},
             ]
         }, {
-            questionText: "2-2atyn kim?",
+            questionText: "Orta juz bi?",
             answers: [
-                {answer: "erjan", isCorrect: true},
-                {answer: "talgat", isCorrect: false},
-                {answer: "marat", isCorrect: false},
-                {answer: "kulaw", isCorrect: false},
+                {answer: "Kazybek", isCorrect: true},
+                {answer: "Aiteke", isCorrect: false},
+                {answer: "tole bi", isCorrect: false},
+                {answer: "Asyk bi", isCorrect: false},
             ]
         }, {
-            questionText: "2-3atyn kim?",
+            questionText: "Kazak handygy sogysty?",
             answers: [
-                {answer: "erjan", isCorrect: true},
-                {answer: "talgat", isCorrect: false},
-                {answer: "marat", isCorrect: false},
-                {answer: "kulaw", isCorrect: false},
+                {answer: "Shaibani", isCorrect: true},
+                {answer: "Mangol", isCorrect: false},
+                {answer: "Turik", isCorrect: false},
+                {answer: "selzhuk", isCorrect: false},
             ]
         }, {
-            questionText: "2-4atyn kim?",
+            questionText: "Kazak handygyn negizin kalagan?",
             answers: [
-                {answer: "3erjan", isCorrect: true},
-                {answer: "talgat", isCorrect: false},
-                {answer: "marat", isCorrect: false},
-                {answer: "kulaw", isCorrect: false},
+                {answer: "Kerey & Janibek", isCorrect: true},
+                {answer: "Abylay", isCorrect: false},
+                {answer: "Tauke", isCorrect: false},
+                {answer: "Tauekel", isCorrect: false},
             ]
         }
     ]
