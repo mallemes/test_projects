@@ -58,7 +58,7 @@ const AddQuiz = () => {
                     ))}
                     <div>
                         <button className={styles.addQuizBtn}
-                                onClick={save} disabled={newQuiz ? !newQuiz[0]?.answers[3].answer : true}
+                                onClick={save} disabled={(newQuiz ? !newQuiz[0]?.answers[3].answer : true) || !addQuizCheck}
                                 style={{backgroundColor: "rgba(136, 134, 134, 0.52)"}}>save
                         </button>
                         <button disabled={addQuizCheck} onClick={refresh}
